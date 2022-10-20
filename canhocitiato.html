@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .header ul{
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                background: white;
+                align-items: center;
+            }
+            .header ul>li>a{
+                font-family: "Roboto", sans-serif;
+                padding: 0px 17px;
+                color: black;
+                font-weight: 700;
+            }     
+            .content__introduce{
+                margin: 56px 0px;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1230px;
+            }    
+            .introduce span{
+                color: #1c1c1c;
+                font-weight: 700;
+                font-family: "Roboto", sans-serif;
+                font-size: 1.25em;
+            }  
+            .introduce h1{
+                font-family: 'Noto Serif';
+                font-style: normal;
+                font-weight: 700;
+                color: #2294D2;
+            }
+            .header{
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                z-index: 1;
+            }
+            body{
+                font-family: "Roboto", sans-serif;
+                line-height: 1.6;
+                color: #353535;
+            }
+            .content__ticket{
+                position: absolute;
+                background-color: rgba(0,0,0,0.3);
+                 top: 74px;
+                width: 750px;
+                 left: 80px;
+                height: 547px;
+                color: #f1f1f1;
+                 border: solid;
+                 border-color: rgb(34, 148, 210);
+                border-width: 5px 5px 5px 5px;
+            }
+            .content__overview{
+                position: relative;
+            }
+            .overview{
+                width: 100%;
+            }
+            .content__ticket ul h2{
+                font-weight: 700;
+                font-size: 2.5em;
+            }
+            .content__ticket>ul>li{
+                margin-top: 1em;
+                margin-bottom: 1em;
+                font-weight: bolder;
+            }
+            .location h1{
+                font-size: 2.5em;
+                color: #2294D2;
+                font-weight: 700;
+            }
+            .content__location{
+                margin-top: 57px;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1230px;
+            }
+            .content__location2{
+                margin-top: 35px;
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .location2 h3{
+                background: #2294D2;
+                color: #fff;
+                padding: 10px 10px;
+                 font-size: 1.25em;
+                font-weight: 700;
+            }
+            .content__location3{
+                margin-top: 35px;
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .location3 h3{
+                background: #2294D2;
+                color: #fff;
+                padding: 10px 10px;
+                 font-size: 1.25em;
+                font-weight: 700;
+            }
+            .introduce:hover img{
+                transform: scale(1.1);
+            }
+            .introduce img{
+                display: block;
+                max-width: 100%;
+                transition-property: filter, opacity, transform, box-shadow;
+                transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+                transition-timing-function: ease, ease, ease, ease;
+                transition-delay: 0s, 0s, 0s, 0s;
+            }
+            .introduce ul li{
+                overflow: hidden;
+            }
+            .location:hover img{
+                transform: scale(1.1);
+            }
+            .location img{
+                display: block;
+                max-width: 100%;
+                transition-property: filter, opacity, transform, box-shadow;
+                transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+                transition-timing-function: ease, ease, ease, ease;
+                transition-delay: 0s, 0s, 0s, 0s;
+            }
+            .location ul li{
+                overflow: hidden;
+            }
+            .utilities:hover img{
+                transform: scale(1.1);
+            }
+            .utilities img{
+                display: block;
+                max-width: 100%;
+                transition-property: filter, opacity, transform, box-shadow;
+                transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+                transition-timing-function: ease, ease, ease, ease;
+                transition-delay: 0s, 0s, 0s, 0s;
+            }
+            .utilities ul li{
+                overflow: hidden;
+            }
+            .content__utilities h1{
+                text-align: center;
+                font-size: 2.5em;
+                color: #2294D2;
+                font-weight: 700;
+                padding: 49px 0px;
+
+            }
+            .content__utilities{
+                margin-top: 35px;
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+            } 
+            .utilities ul li>ul{
+                display: flex;
+            }
+            .utilities h3{
+                font-weight: 700;
+                font-size: 1.25em;
+                margin-top: 0px;
+            }
+            .utilities__li {
+                border: solid 1px;
+                border-radius: 50%;
+                width: 17px;
+                height: 19px;
+                text-align: center;
+                margin-right: 5px;
+                background: red;
+                color: white;
+            }
+            .utilities__ul li ul{
+                padding: 0px;
+                margin: 10px 0px;
+                padding: 0px 10px;
+            }
+            .utilities__ul{
+                padding: 0px;
+            }
+            .overview__utilities{
+                background: rgba(0,0,0,0.05);
+            }
+            .content__img h1{
+                text-align: center;
+                font-size: 3em;
+                font-weight: 700;
+                color: #2294D2;
+                padding-top: 50px;
+                margin: 0px 0px 20px;
+            }
+            .content__img ul{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                border-bottom: solid 3px #2294D2;
+            }
+            .content__img ul li{
+                padding: 5px 25px;
+                font-weight: 700;
+                font-size: 1.23em;
+            }
+            .content__img{
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .img ol{
+                list-style: none;
+                position: absolute;
+                bottom: 0px;
+                background-color: rgba(0,0,0,0.3);
+                color: white;
+                width: 276px;
+                padding: 11px 21px 21px;
+                margin: 0px;
+            }
+            #img__ol {
+                list-style: none;
+                position: absolute;
+                bottom: 0px;
+                background-color: rgba(0,0,0,0.3);
+                color: white;
+                width: 585px;
+                padding: 11px 21px 21px;
+                margin: 0px;
+            }
+            .content__Advantages{
+                padding-top: 50px;
+                margin-top: 30px;
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+            .content__advantages{
+                background: rgba(0,0,0,0.05);
+            }
+            .Advantages ul{
+                list-style: none;
+                text-align: center;
+            }
+            .Advantages ul li span{
+                margin-bottom: 10px;
+                font-size: 1.23em;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+            .content__img ul li:hover{
+                background: #2294D2;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            .gap__element{
+                padding: 60px 0px 0px;
+                height: auto;
+                display: block;
+            }
+            .content__news {
+                max-width: 1230px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .content__news h1{
+                text-align: center;
+                font-size: 2.5em;
+                font-weight: 700;
+                margin-bottom: 14px;
+                color:  #2294D2;
+            }
+            .news ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            .news{    
+                box-shadow: 0px 0px 10px 4px rgb(0 0 0 / 20%);
+                width: 276px;
+                height: 369px;
+                margin: 0px 10px;
+                padding: 0px;
+            }
+            .news ul li{
+                padding: 10px;
+            }
+            .news ul li button{
+                background: white;
+                color: #2294D2;
+                border: solid 1px #2294d2;
+            }
+            .news ul li h5{
+                font-size: 1.23em;
+                font-weight: 700;
+            }
+            .news ul:hover img{
+                transform: scale(1.1);
+            }
+            .news ul li img{
+                display: block;
+                max-width: 100%;
+                transition-property: filter, opacity, transform, box-shadow;
+                transition-duration: 0.6s, 0.6s, 0.6s, 0.3s;
+                transition-timing-function: ease, ease, ease, ease;
+                transition-delay: 0s, 0s, 0s, 0s;
+            }
+            .news ul li{
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">  
+                    <ul>
+                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/logo.jpg" style="max-height: 80px;"/>
+                <li><a href="#">TRANG CHỦ </a></li>
+                  <li><a href="#scroll__introduce">GIỚI THIỆU </a></li>
+                <li><a href="#scroll__overview">TỔNG QUAN </a></li>
+                  <li><a href="#scroll__location">VỊ TRÍ </a></li>
+                 <li><a href="#scroll__utilities">TIỆN ÍCH </a></li>
+                <li><a href="#scroll__img">HÌNH ẢNH </a></li>
+                <li><a href="#scroll__Advantages">ƯU ĐIỂM </a></li>
+                <li><a href="#">TIN TỨC </a></li>
+                <li><a href="#">LIÊN HỆ </a></li>
+                <input type="text" placeholder="Tìm kiếm "/>
+                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            </ul> 
+        </div>
+        <!--phần slider-->
+        <div class="slider">
+            <img src="https://salereal.com.vn/wp-content/uploads/2020/02/phoi-canh-citi-grand-1.jpg" style="width: 100%; height: 670px;margin-top: 89px;"/>
+        </div>
+        <!--phần nội dung -->
+        <!--phần giới thiệu-->
+        <div class="gap__element" id="scroll__introduce"></div>
+        <div class="row content__introduce" >
+            <div class="col-md-6 introduce">
+                <span>Dự án căn hộ</span>
+                <h1>MONA CITI LAND</h1>
+                <p>Căn hộ Mona Citi Land tọa lạc tại khu đô thị Cát Lái phường Cát Lái quận 2 Tp.Hồ 
+                Chí Minh. Diện tích 152ha được thành phố quy hoạch và phát triển thành khu đô thị 
+                hoàn chỉnh với đầy đủ chức năng: bệnh viện, trường học, trung tâm thương mại,
+                 khu vui chơi giải trí, công viên rộng 4ha, trung tâm thể dục thể thao…
+                </p>
+                <p>
+                    Là một siêu phẩm mới củatại khu đô thị Cát Lái được ví như hòn ngọc mới của khu 
+                    đông bởi sự hoàn hảo trong đường nét thiết kế. Mọi cảnh quan bên trong và ngoài 
+                    căn hộ , từ không gian tới kiến trúc đều toát lên vẻ thời thượng của dự án.
+                </p>
+            </div>
+            <div class="col-md-6 introduce">
+                <ul>
+                    <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gt.jpg" style="width: 585px; height: 387px;" /></li>
+                </ul>        
+            </div>
+        </div>
+        <!--phần tổng quan-->
+        <div class="content__overview" id="scroll__overview">
+            <div class=" overview">
+        
+                   <img src="http://trungtambds.com.vn/wp-content/uploads/image/SwanPark/Phoi-canh-du-an-Khu-do-thi-Swan-Park-Dong-Sai-Gon-New-City.jpg" style="width:100% ;height: 723px;" /> 
+                                 
+            </div>
+            <div class="content__ticket">
+           <ul>
+                <h2>TỔNG QUAN DỰ ÁN</h2>
+                <li>Tên dự án: Mona Citi Land</li>
+                <li>Chủ đầu tư: Công ty TNHH Mona Media</li>
+                <li>Vị trí: Khu đô thị Cát Lái, Phường Cát Lái, Quận 2, TP HCM</li>
+                <li>Đơn vị tư vấn thiết kế: MIA</li>
+                <li>Đơn vị thi công: COSACO</li>
+                <li>Tổng diện tích khu đất: 17.000 m2</li>
+                <li>Diện tích xây dựng: 19%</li>
+                <li>Tổng diện tích tầng hầm: Full giữa 2 block</li>
+                <li>Tổng số căn hộ: 675 căn</li>
+                <li>Bàn giao: quý 4/2019</li>           
+            </ul>           
+        </div>       
+        </div>
+        <!--phần vị trí-->
+        <div class="gap__element" id="scroll__location"></div>
+        <div class="row content__location" >
+            <div class="col-md-6 location">
+                <h1 >VỊ TRÍ ĐẮC ĐỊA</h1>
+                <p>
+                    Mona Citi Land toạ lạc tại ngay trung tâm khu đô thị Cát Lái quận 2. Chỉ cần
+                 không quá 15 phút di chuyển khách hàng có thể kết nối tất cả các tiện ích lân 
+                 cận, tất cả những quận lân cận và quận 1. Trường học, bệnh viện, siêu thị, khu vui
+                  chơi giải trí, công viên kề bên…Citialto giúp bạn hiện thực ước mơ có 1 căn nhà 
+                  ngay trung tâm thành phố, phù hợp trở thành một nơi an cư lý tưởng.
+                </p>
+            </div>
+            <div class="col-md-6 location">
+                <ul>
+                    <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/vi-tri-1024x530.jpg" style="width: 586px; height:292px;"/></li>
+                </ul>
+                
+            </div>
+        </div>
+        <div class="row content__location2">
+            <div class="col-md-6 location2">
+                <h3><i class="fa-solid fa-plus"></i> TRUNG TÂM QUẬN 1</h3>
+                <p>Từ Citialto chỉ 15 phút kết nối trực tiếp với quận 1 thông qua hầm thủ thiêm.</p>
+            </div>
+            <div class="col-md-6 location2">
+                <h3><i class="fa-solid fa-plus"></i> CÁC TIỆN ÍCH LÂN CẬN</h3>
+                <p>
+                    Chỉ chưa tới 1 phút chạy xe dân cư Citialto có thể tiếp cận 
+                    cụm tiện ích khu đô thị Cát Lái. Hệ thống giáo dục từ mầm
+                     non tới đại học, khu thể thao, khu mua sắm…
+                </p>
+            </div>
+        </div>
+        <div class="row content__location3">
+            <div class="col-md-6 location3">
+                <h3><i class="fa-solid fa-plus"></i> TRUNG TÂM QUẬN 2</h3>
+                <p>
+                    Chưa đến 8 phút khách hàng thuận tiện tới các tiện ích hiện 
+                    hữu của quận 2 – Trung tâm hành chính quận, Parkson 
+                    Cantatil, Vincom Mega Mall…
+                </p>
+            </div>
+            <div class="col-md-6 location3">
+                <h3><i class="fa-solid fa-plus"></i> PHÚ MỸ HƯNG</h3>
+                <p>
+                    Từ dự án liên kết tới trung tâm khu nam Phú Mỹ Hưng chỉ mất chưa tới 10 phút chạy xe quan cầu Phú Mỹ.
+                </p>
+            </div>
+        </div>
+        <!--nhung  tien  tich-->
+        <div class="gap__element" id="scroll__utilities"></div>
+        <div class="overview__utilities" >
+            <div class="row content__utilities">
+                <h1>NHỮNG TIỆN ÍCH</h1>
+                <div class="col-md-6 col-xs-6 utilities">
+                    <ul>
+                        <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/Capture1.png" style="width:584px; height:312px;"/></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-3 utilities">
+                    <h3>Tiện ích nội khu:</h3>
+                    <ul class="utilities__ul">
+                        <li>
+                            <ul>
+                                <li class="utilities__li">1</li>
+                                <li>Công viên trung tâm</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">3</li>
+                                <li>Sân cầu lông</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">5</li>
+                                <li>BBQ</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">7</li>
+                                <li>Khu vui chơi trẻ em</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">9</li>
+                                <li>Ghế nghỉ</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">11</li>
+                                <li>Trung tâm thương mại</li>
+                            </ul>      
+                        </li>  
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-3 utilities">
+                    <h3></h3>
+                    <ul class="utilities__ul">
+                        <li></li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">2</li>
+                                <li>Sân bóng rổ</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">4</li>
+                                <li>Lối đi bộ</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">6</li>
+                                <li>Sân cát</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">8</li>
+                                <li>Hồ bơi</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">10</li>
+                                <li>Sảnh đón</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">12</li>
+                                <li>Hầm giữ xe</li>
+                            </ul>      
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+            <div class="row content__utilities">                
+                <div class="col-md-3 col-xs-3 utilities">
+                    <h3>Tiện ích ngoại khu:</h3>
+                    <ul class="utilities__ul">
+                        <li>
+                            <ul>
+                                <li class="utilities__li">1</li>
+                                <li>Trung tâm thương mại</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">3</li>
+                                <li>THPT Cát Lái</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">5</li>
+                                <li>Tiểu học Mỹ Thủy</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">7</li>
+                                <li>Tòa án</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">9</li>
+                                <li>Cơ quan hành chính</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">11</li>
+                                <li>Đại học quản lí & công nghệ (UMT)</li>
+                            </ul>      
+                        </li>  
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-3 utilities">
+                    <h3></h3>
+                    <ul class="utilities__ul">
+                        <li></li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">2</li>
+                                <li>Bệnh viên</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">4</li>
+                                <li>Mẫu giáo Sơn Ca</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">6</li>
+                                <li>THCS Cát Lái</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">8</li>
+                                <li>Sân vận động</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">10</li>
+                                <li>Câu lạc bộ</li>
+                            </ul>      
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="utilities__li">12</li>
+                                <li>Bưu điện</li>
+                            </ul>      
+                        </li>  
+                    </ul>
+                </div>
+                <div class="col-md-6 col-xs-3 utilities">
+                    <ul>
+                        <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/tien-ich-ngoai-khu-1024x410.jpg" style="width:585px; height:230px;"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <!--hình ảnh -->
+        <div class="gap__element" id="scroll__img"></div>
+        <div class="row content__img" >
+            <h1>HÌNH ẢNH</h1>
+            <ul >
+                <li >Căn hộ</li>
+                <li >Mặt Bằng</li>
+                <li >Tiện ích khác</li>
+            </ul>
+            <div class="col-md-3 col-xs-3 img">
+                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/bath-room.jpg" style="width:276px;height:553px;position: relative;"/>
+                <ol>
+                    <li>Phòng tắm</li>
+                    <li>Căn hộ Mona Citi Land</li>
+                </ol>  
+            </div>
+            <div class="col-md-6 col-xs-6 img">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 ">
+                     <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/living-room.jpg" style="height:380px;width:585px;"/>
+                        <ol id="img__ol">
+                            <li>Phòng khách</li>
+                            <li>Căn hộ Mona Citi Land</li>
+                        </ol>  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active" >
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall4-1024x615.jpg " style="width: 184px; height:144px;"/>
+                                            </div>                                                      
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall5-1024x615.jpg " style="width: 184px; height:144px;"/>
+                                            </div>                                                      
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall6-1024x615.jpg " style="width: 184px; height:144px;"/>
+                                            </div>                                                      
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                     <div class="row">
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall1-1024x615.jpg" style="width: 184px; height:144px;"/>
+                                            </div>                                                      
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall2-1024x615.jpg" style="width: 184px; height:144px;" />
+                                            </div>                                                      
+                                        </div>
+                                        <div class="col-md-4 col-xs-4">
+                                            <div class="thumbnail">
+                                                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall3-1024x615.jpg" style="width: 184px; height:144px;"/>
+                                            </div>                                                      
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+                            <!--nut sang trai phai-->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                              </a>     
+                        </div>
+                    </div>                
+                </div>  
+            </div>                  
+            <div class="col-md-3 col-xs-3 img">
+                <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/kitchen.jpg" style="width:276px;height:553px;"/>
+                <ol>
+                    <li>Nhà bếp</li>
+                    <li>Căn hộ Mona Citi Land</li>
+                </ol> 
+            </div>
+        </div>
+    <!--ưu điểm-->
+    <div class="gap__element" id="scroll__Advantages"></div>
+    <div class="content__advantages">
+        <div class="row content__Advantages" >
+        <div class="col-md-4 Advantages">
+            <ul>
+                <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/icons8-first-place-ribbon-60.png" style="width:60px;height:60px;"/></li>
+                <li><span>Chủ đầu tư uy tín</span></li>
+                <li>
+                    Với uy tín và tâm huyết của mình trên thị trường bất
+                     động sản. Mona Media tạo ra thương hiệu được
+                    khách hàng và đối tác đánh giá cao. Trong năm 2018
+                        Mona Media tiếp tục nhận được nhiều giải thưởng
+                    mang tầm cỡ quốc tế về chủ đầu tư uy tín và các dự
+                         án nhân văn…
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 Advantages">
+            <ul>
+                <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/icons8-map-marker-60.png" style="width:60px;height:60px;"/></li>
+                <li><span>Vị Trí Đẹp</span></li>
+                <li>
+                    Mona Citi Land là một trong những dự án chung cư 
+                    hiếm hoi hiện nay toạ lạc tại ngay trung tâm khu đô thị 
+                    Cát Lái một trong những khu đô thị hoàn chỉnh 
+                    nhất tại Sài Gòn hiện nay. Vị trí đắt giá Khu đô Thị Cát
+                    Lái – Phường Cát Lái – Quận 2.
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 Advantages">
+            <ul>
+                <li><img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/icons8-money-bag-60.png" style="width:60px;height:60px;"/></li>
+                <li><span>Giá Bán Cạnh Tranh</span></li>
+                <li>
+                    Sở hữu ưu thế vượt trội về vị trí và tiện ích nhưng
+                     Mona Citi Land lại có mức giá rất cạnh tranh so với
+                      những dự án chung cư khác trong khu vực. Căn hộ 
+                      cao cấp của khu đôn nhưng sở hữu mức giá phù hợp 
+                      với đông đảo khách hàng. Một dự án đáng đồng tiền 
+                      cho khách mua ở và đầu tư.
+                </li>
+            </ul>
+        </div>
+    </div>    
+    </div>
+    
+    <!--tin tức-->
+    <div class="gap__element" id="scroll__news"></div>
+        <div class="row content__news">
+            <h1>tin tức</h1>
+            <div class="col-md-3 col-xs-3 news">
+                <ul>
+                    <li>
+                        <div class="thumnail">
+                            <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/news4.jpg" style="width:255px;height:141px;"/>
+                        </div>
+                    </li>
+                    <li><h5>Mona Media Công Bố Mở Bán Căn Hộ Citi Land Quận 2</h5></li>
+                    <li>Mở Bán Citi Land Ngày 8/10 tại Trung tâm Gem Center Mona Media chính ...</li>
+                    <li><button>Chi tiết</button></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-3 news">
+                <ul>
+                    <li>
+                        <div class="thumnail">
+                            <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/PHOI-CANH-DU-AN-CAN-HO-FLORA-KESHI-THU-DUC-NAM-LONG-HCM.jpg" style="width:255px;height:141px;"/>
+                        </div>
+                    </li>
+                    <li><h5>Giai Điệu Cuộc Sống Diệu Kỳ Tại Mona Citi Land</h5></li>
+                    <li>
+                        Không khó để hiểu lý do vì sao dù chỉ mới vào Việt Nam khoảng 
+                        ...
+                    </li>
+                    <li><button>Chi tiết</button></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-3 news">
+                <ul>
+                    <li>
+                        <div class="thumnail">
+                            <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/living-room.jpg" style="width:255px;height:141px;"/>
+                        </div>
+                    </li>
+                    <li><h5>Ngôi Nhà Dành Cho Người Trẻ Thành Đạt Và Bản Lĩnh</h5></li>
+                    <li>
+                        Mona Citi Land Ngôi nhà của những người trẻ thành đạt Trong guồng quay 
+                        ....
+                    </li>
+                    <li><button>Chi tiết</button></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-3 news">
+                <ul>
+                    <li>
+                        <div class="thumnail">
+                            <img src="http://mauweb.monamedia.net/canhocitialto/wp-content/uploads/2019/02/gall1.jpg" style="width:255px;height:141px;"/>
+                        </div>
+                    </li>
+                    <li><h5>Cơ Hội Sở Hữu Căn Hộ Cho Người Trẻ</h5></li>
+                    <li>
+                        Mona Citi Land&nbsp;căn hộ cao cấp tọa lạc tại quận 2 được phát triển bởi
+                         ...
+                        </li>
+                    <li><button>Chi tiết</button></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
